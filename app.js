@@ -12,7 +12,7 @@ const dbURI =
 
 mongoose
   .connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(result => console.log('db connected'))
+  .then(result => app.listen(3000))
   .catch(err => console.log(err))
 
 // register view engine
@@ -55,7 +55,7 @@ app.get('/all-blogs', (req, res) => {
 })
 
 app.get('/single-blog', (req, res) => {
-  Blog.findById('5ea99b49b8531f40c0fde689')
+  Blog.findById('61238a659137db0b9ce854ca')
     .then(result => {
       res.send(result)
     })
